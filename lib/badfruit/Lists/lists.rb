@@ -27,5 +27,9 @@ module BadFruit
     def upcoming_dvd_releases
       return @badfruit.parse_movies_array(JSON.parse(@badfruit.get_lists_action("upcoming_dvds")))
     end
+    
+    def box_office
+      return @badfruit.parse_movies_array(JSON.parse(@badfruit.get_lists_action("box_office")))
+    end
   end
 end
