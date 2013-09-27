@@ -28,8 +28,8 @@ module BadFruit
       return @badfruit.parse_movies_array(JSON.parse(@badfruit.get_lists_action("upcoming_dvds")))
     end
     
-    def box_office
-      return @badfruit.parse_movies_array(JSON.parse(@badfruit.get_lists_action("box_office")))
+    def box_office(limit)
+      return @badfruit.parse_movies_array(JSON.parse(@badfruit.get_lists_action_by_limit("box_office", limit)))
     end
   end
 end
