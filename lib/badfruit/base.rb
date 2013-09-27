@@ -70,7 +70,19 @@ module BadFruit
       end
       return get(url)
     end
-
+    
+    def get_lists_action_by_limit(action, limit)
+      url = nil
+      case action
+      when "new_releases"
+        url = "#{LISTS_DETAIL_BASE_URL}/movies/box_office.json?apikey=#{@api_key}&limit=#{limit}"
+      else
+        puts "Not a valid action"
+        return
+      end
+      return get(url)
+    end
+    
     def get(url)
       data = nil
       resp = HTTParty.get(url)
