@@ -74,7 +74,7 @@ module BadFruit
     def get_lists_action_by_limit(action, limit)
       url = nil
       case action
-      when "new_releases"
+      when "box_office"
         url = "#{LISTS_DETAIL_BASE_URL}/movies/box_office.json?apikey=#{@api_key}&limit=#{limit}"
       else
         puts "Not a valid action"
