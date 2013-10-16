@@ -1,7 +1,7 @@
 module BadFruit
   class Movie
     attr_accessor :id, :name, :year, :genres, :mpaa_rating, :runtime, :release_dates,
-                  :synopsis, :cast, :directors, :scores, :posters, :links
+                  :synopsis, :cast, :directors, :scores, :posters, :links, :studio
 
     def initialize(movieHash, badfruit)
       @id = movieHash["id"]
@@ -15,6 +15,7 @@ module BadFruit
       @cast = movieHash["abridged_cast"]
       @directors = movieHash["abridged_directors"]
       @links = movieHash["links"]
+      @studio = movieHash["studio"]
       @scores = Scores.new(movieHash["ratings"]) #single score object containing two scores
       @posters = Posters.new(movieHash["posters"]) #single posters object containing four poster urls
       @badfruit = badfruit
